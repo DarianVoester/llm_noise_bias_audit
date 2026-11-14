@@ -94,7 +94,7 @@ open the menu at the top right, then **Settings → Theme**.
 ```bash
 python -m venv .venv && source .venv/bin/activate
 pip install --require-hashes -r requirements.txt
-pip install -r requirements-dev.txt     # tests, linting
+pip install --require-hashes -r requirements-dev.txt     # tests, linting
 streamlit run app.py
 ```
 
@@ -225,7 +225,7 @@ come from a variable of its own (not `OPENAI_API_KEY` and the like) and is sent 
 hosts over `https://` only. Custom endpoint addresses that point to cloud metadata services
 are refused in every notation.
 
-Dependencies are hash-pinned and checked with `pip-audit` in CI, and the GitHub Actions are
+Dependencies and development tools are hash-pinned and checked with `pip-audit` in CI, and the GitHub Actions are
 pinned to commits. LLM calls use a small in-house `httpx` client instead of a large SDK.
 LiteLLM was removed after several compromised 2026 releases, which cut the dependency tree
 from 81 to 47 packages. Exports are designed to escape spreadsheet formulas (cells and

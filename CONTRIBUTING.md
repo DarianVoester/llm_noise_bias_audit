@@ -7,7 +7,7 @@ requests small and include tests.
 
 ```bash
 pip install --require-hashes -r requirements.txt
-pip install -r requirements-dev.txt
+pip install --require-hashes -r requirements-dev.txt
 ruff check .
 pytest
 streamlit run app.py
@@ -37,8 +37,10 @@ type; `ruff check .` does the same from the terminal.
   app has no login.
 - GitHub Actions in `.github/workflows/` are pinned to a commit hash with the version as a
   comment. Keep that form; Dependabot updates both.
-- `requirements-dev.txt` is not hash-pinned yet. The steps to pin it are written at the
-  top of that file.
+- The development tools are hash-pinned too: edit `requirements-dev.in` and regenerate
+  `requirements-dev.txt` with the command at the top of `requirements-dev.in`. Do this
+  also after every change of `requirements.txt`, so that packages both files share stay
+  on the same version.
 
 ## AI-assisted contributions
 

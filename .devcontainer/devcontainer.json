@@ -9,7 +9,7 @@
     "storage": "32gb"
   },
   "features": {},
-  "postCreateCommand": "pip install --require-hashes -r requirements.txt && pip install -r requirements-dev.txt",
+  "postCreateCommand": "pip install --require-hashes -r requirements.txt && pip install --require-hashes -r requirements-dev.txt",
   "postAttachCommand": "bash scripts/start_app.sh; echo; echo 'Restart the app: press Ctrl+Shift+B, or use the button in the app sidebar (App: restart or stop).'; echo 'Optional free local models: bash scripts/install_ollama.sh'",
   "forwardPorts": [8501],
   "portsAttributes": {

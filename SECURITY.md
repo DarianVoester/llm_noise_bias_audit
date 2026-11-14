@@ -25,7 +25,7 @@ isolation and rate limiting.
 | Spreadsheet users | CSV/Excel formula injection from LLM output | Cells and column headers starting with `= + - @ \t \r` (after leading blanks) are prefixed with `'` on export |
 | Local model servers | unauthenticated Ollama / OpenAI-compatible APIs | Bound to `127.0.0.1`; never forwarded; custom endpoint URLs restricted to loopback / private networks unless explicitly overridden; link-local / metadata addresses always refused, also as IPv4-mapped IPv6, hex / decimal notation or a host name that resolves to them; proxy variables ignored for local servers |
 | App availability | oversized or pathological model replies | Replies over 5 MB are discarded; parsing is linear in the reply length and capped at 200 000 characters |
-| Supply chain | compromised PyPI packages or GitHub Actions | Hash-pinned `requirements.txt` installed with `--require-hashes`; `pip-audit` + blocklist in CI; GitHub Actions pinned to commit hashes; Dependabot. **Open:** the development tools in `requirements-dev.txt` (pytest, ruff, pip-audit, uv) are not hash-pinned yet, and the Dev Container image is referenced by tag, not by digest |
+| Supply chain | compromised PyPI packages or GitHub Actions | Hash-pinned `requirements.txt` and `requirements-dev.txt` (development tools: pytest, ruff, pip-audit, uv), both installed with `--require-hashes`; `pip-audit` + blocklist in CI; GitHub Actions pinned to commit hashes; Dependabot. **Open:** the Dev Container image is referenced by tag, not by digest |
 | Shell | command injection through model names | Strict regex validation of tags; subprocess calls use argument lists (`shell=False`) |
 
 ## Analysis-code sandbox (`src/evaluator.py`)
