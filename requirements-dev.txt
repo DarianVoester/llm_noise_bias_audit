@@ -9,6 +9,6 @@
 # .devcontainer/devcontainer.json, .github/workflows/ci.yml, README.md and CONTRIBUTING.md.
 pytest>=8
 ruff>=0.6
-pip-audit>=2.7
+pip-audit>=2.10.1
 pip-tools>=7.4
 uv>=0.5
