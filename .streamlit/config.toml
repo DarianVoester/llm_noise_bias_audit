@@ -1,0 +1,94 @@
+# High-contrast theme with native light AND dark mode.
+# Streamlit follows the operating-system / browser preference; users can switch any time
+# via the app menu (top right, Settings, Theme). Do NOT set [theme] base - that would
+# pin one mode.
+# The contrast ratios are checked in tests/test_theme.py (WCAG 2.x).
+# Docs: https://docs.streamlit.io/develop/concepts/configuration/theming
+
+[theme]
+baseRadius = "small"
+showWidgetBorder = true
+
+# ---------------------------------------------------------------- light mode
+[theme.light]
+primaryColor = "#1D4F91"              # strong blue: buttons, sliders (white text on it: 8:1)
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#EEF1F5"  # inputs, expanders
+textColor = "#111418"                 # near-black, 18:1 on the background
+linkColor = "#1D4F91"
+borderColor = "#6F7885"               # widget outlines stay visible (4.5:1)
+codeBackgroundColor = "#EEF1F5"
+codeTextColor = "#111418"
+dataframeBorderColor = "#B9C0CA"
+greenColor = "#2E7D32"
+greenBackgroundColor = "#E4F3E7"
+greenTextColor = "#1B4D2A"
+yellowColor = "#8A6500"
+yellowBackgroundColor = "#FFF3C4"
+yellowTextColor = "#553D00"
+orangeColor = "#B45309"
+orangeBackgroundColor = "#FCEADB"
+orangeTextColor = "#6A3710"
+redColor = "#B3261E"
+redBackgroundColor = "#FBE9E7"
+redTextColor = "#7A1C1C"
+blueColor = "#1D4F91"
+blueBackgroundColor = "#E3EDFA"
+blueTextColor = "#153B6E"
+violetColor = "#5B4B9A"
+grayColor = "#5A616B"
+chartCategoricalColors = ["#5B80AA", "#C27F52", "#5F9470", "#AE6F8D", "#7E7EB8", "#A98C45", "#5E9696", "#8A8A8A"]
+chartSequentialColors = ["#EEF1F5", "#D9E2EE", "#BFD0E3", "#A2BAD6", "#84A3C8", "#678CB8", "#4E76A6", "#3B6090", "#2B4A75", "#1D3557"]
+
+[theme.light.sidebar]
+backgroundColor = "#EEF1F5"
+secondaryBackgroundColor = "#FFFFFF"
+
+# ----------------------------------------------------------------- dark mode
+[theme.dark]
+primaryColor = "#2F6FD0"              # readable under white button text and on the dark page
+backgroundColor = "#121418"
+secondaryBackgroundColor = "#1F242B"
+textColor = "#F4F4F2"                 # 17:1 on the background
+linkColor = "#A3CBFF"
+borderColor = "#7C8591"
+codeBackgroundColor = "#1F242B"
+codeTextColor = "#F4F4F2"
+dataframeBorderColor = "#4A515C"
+greenColor = "#81C995"
+greenBackgroundColor = "#17301E"
+greenTextColor = "#BFE8C8"
+yellowColor = "#F2C94C"
+yellowBackgroundColor = "#352B0C"
+yellowTextColor = "#FFE49A"
+orangeColor = "#FFA657"
+orangeBackgroundColor = "#3A2412"
+orangeTextColor = "#FFD2AE"
+redColor = "#FF8A80"
+redBackgroundColor = "#3D1A1A"
+redTextColor = "#FFC9C4"
+blueColor = "#8FC0FF"
+blueBackgroundColor = "#172A44"
+blueTextColor = "#C6DEFF"
+violetColor = "#C3B5F5"
+grayColor = "#A9B0BA"
+chartCategoricalColors = ["#5B80AA", "#C27F52", "#5F9470", "#AE6F8D", "#7E7EB8", "#A98C45", "#5E9696", "#8A8A8A"]
+chartSequentialColors = ["#172A44", "#1F3A5C", "#284A74", "#335B8C", "#416DA3", "#5380B7", "#6A94C8", "#86AAD6", "#A6C1E3", "#C9DAEF"]
+
+[theme.dark.sidebar]
+backgroundColor = "#1A1E24"
+secondaryBackgroundColor = "#262C35"
+
+[browser]
+gatherUsageStats = false
+
+# SECURITY: the app has no login. It must only listen on the loopback interface;
+# Codespaces / Dev Container port forwarding still works. Do not change the address to
+# 0.0.0.0 - anyone on the network could then use your API keys and run analysis code.
+[server]
+address = "127.0.0.1"
+enableXsrfProtection = true
+enableCORS = true
+
+[client]
+showErrorDetails = "none"

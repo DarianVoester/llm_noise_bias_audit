@@ -1,0 +1,52 @@
+# --- Secrets (never commit) ---
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+secrets.toml
+.streamlit/secrets.toml
+# .streamlit/config.toml (theme) IS committed - it contains no secrets.
+
+# --- User model registry (may contain private endpoints) ---
+models/models.toml
+
+# --- Model weights & large artifacts ---
+*.gguf
+*.safetensors
+*.bin
+*.pt
+*.onnx
+.ollama/
+
+# --- Exports / run artifacts ---
+exports/
+runs/
+*.xlsx
+results_*.csv
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.python-version
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# --- IDE / OS ---
+.vscode/*
+!.vscode/extensions.json
+!.vscode/tasks.json
+!.vscode/launch.json
+.idea/
+*.swp
+.DS_Store
+Thumbs.db

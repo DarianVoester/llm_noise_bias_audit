@@ -1,0 +1,16 @@
+# Runtime dependencies. Regenerate the lock file with:
+#   uv pip compile requirements.in --universal --python-version 3.11 --generate-hashes \
+#     --exclude-newer <date 7 days ago> -o requirements.txt
+#
+# SECURITY: LiteLLM was REMOVED on 2026-11-08. It had compromised PyPI releases in 2026
+# (1.82.7, 1.82.8, 1.107.0) and its pinned dependency tree (filelock < 4) kept known
+# advisories in the lock file. LLM calls now go through src/providers.py using httpx.
+# Do not re-add it (or the `openai` / `anthropic` SDKs) without a security review.
+streamlit
+plotly
+pandas
+numpy
+scipy
+openpyxl
+pydantic>=2
+httpx

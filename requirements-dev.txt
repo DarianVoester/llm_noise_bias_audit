@@ -1,0 +1,14 @@
+# Development tools (tests, linting, dependency audit, lock-file generation).
+#
+# SECURITY TODO: these are version ranges without hashes, unlike requirements.txt. They
+# are installed into the same environment that holds your API keys. To pin them, move the
+# five lines below into requirements-dev.in and generate this file as a hash lock:
+#   uv pip compile requirements-dev.in --universal --python-version 3.11 --generate-hashes \
+#     --exclude-newer <date 7 days ago> -o requirements-dev.txt
+# then install it with `pip install --require-hashes -r requirements-dev.txt` in
+# .devcontainer/devcontainer.json, .github/workflows/ci.yml, README.md and CONTRIBUTING.md.
+pytest>=8
+ruff>=0.6
+pip-audit>=2.7
+pip-tools>=7.4
+uv>=0.5

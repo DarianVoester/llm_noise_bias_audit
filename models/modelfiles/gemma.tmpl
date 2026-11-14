@@ -1,0 +1,9 @@
+TEMPLATE """{{ if .System }}<start_of_turn>user
+{{ .System }}
+
+{{ end }}{{ if .Prompt }}{{ if not .System }}<start_of_turn>user
+{{ end }}{{ .Prompt }}<end_of_turn>
+{{ end }}<start_of_turn>model
+{{ .Response }}<end_of_turn>
+"""
+PARAMETER stop "<end_of_turn>"

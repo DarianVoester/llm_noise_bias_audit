@@ -1,0 +1,46 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "App: Start",
+      "detail": "Start the app in the background (does nothing if it already runs)",
+      "type": "shell",
+      "command": "bash scripts/start_app.sh start",
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "shared", "clear": true }
+    },
+    {
+      "label": "App: Restart",
+      "detail": "Stop the app and start it again, e.g. after an update or when it hangs (Ctrl+Shift+B)",
+      "type": "shell",
+      "command": "bash scripts/start_app.sh restart",
+      "problemMatcher": [],
+      "group": { "kind": "build", "isDefault": true },
+      "presentation": { "reveal": "always", "panel": "shared", "clear": true }
+    },
+    {
+      "label": "App: Stop",
+      "detail": "Stop the app",
+      "type": "shell",
+      "command": "bash scripts/start_app.sh stop",
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "shared", "clear": true }
+    },
+    {
+      "label": "App: Status",
+      "detail": "Say whether the app is running and where to open it",
+      "type": "shell",
+      "command": "bash scripts/start_app.sh status",
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "shared", "clear": true }
+    },
+    {
+      "label": "App: Show log",
+      "detail": "Show the last lines the app wrote to its log (useful when something fails)",
+      "type": "shell",
+      "command": "bash scripts/start_app.sh log",
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "shared", "clear": true }
+    }
+  ]
+}
